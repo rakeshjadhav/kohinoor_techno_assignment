@@ -10,7 +10,7 @@
         </div>
         <div class="row">
             <div class="col-md-12 col-lg-12 col-sm-12">
-                <div class="white-box">
+                <div class="white-box" style="border-top:4px solid rgb(116 96 238);border-radius:5px">
                     <div class="col-md-3 col-sm-4 col-xs-6 pull-right">
                         <a href="#addUserModal" data-toggle="modal" class="btn btn btn-rounded btn-success btn-outline m-r-5">
                             <i class="ti-check text-success m-r-5"></i>Add New User
