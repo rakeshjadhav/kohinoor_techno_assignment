@@ -26,7 +26,7 @@ class UpdateUserRequest extends FormRequest
              'name.required' => 'User name is required',
              'name.regex' => 'The user name format is invalid only alphabets numeric and space allowed',
              'email.required' => 'User email is required',
-             'dob.required' => 'User birth date of is required'
+             'dob.required' => 'User date of birth is required'
             ];
         return $messages;
       }
