@@ -1,5 +1,6 @@
   
   // onclick submit btn to open  add form popup model 
+  
   $(document).on("submit", "#addCompanyForm", function(e) {
     e.preventDefault(); 
     var showError = $("#addCompanyModal #showError");
