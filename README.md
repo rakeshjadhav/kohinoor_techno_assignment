@@ -90,3 +90,20 @@ For open source projects, say how it is licensed.
 
 ## Project status
 If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+
+Clone the repository :
+  git clone https://glpat-21EtgGDLof9y6ZPXtsPX@gitlab.com/rjwebdev1/kohinoor_techno_assignment.git
+
+Switch to the repo folder
+   cd kohinoor_techno_assignment
+
+Install all the dependencies using composer
+  composer install
+
+Run the database migrations (Set the database connection in .env before migrating)
+ I have already set local database name
+  php artisan migrate
+
+Start the local development server 
+server port already added in env file as param SERVER_PORT=9002
+You can now access the server at http://localhost:9002
