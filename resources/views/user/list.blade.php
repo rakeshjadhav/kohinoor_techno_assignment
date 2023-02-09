@@ -22,8 +22,8 @@
                             <div id="deleteMsg" class="font-medium text-red-600 alert alert-success d-none"></div>
                             <thead>
                                 <tr>
-                                    <th>Name</th>
-                                    <th>Email</th>
+                                    <th>User Name</th>
+                                    <th>User Email</th>
                                     <th>Date of Birth</th>
                                     <th>Photo</th>
                                     <th>Actions</th>

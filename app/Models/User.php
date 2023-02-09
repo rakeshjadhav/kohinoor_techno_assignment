@@ -23,6 +23,9 @@ class User extends Authenticatable
         'photo'
     ];
 
-    
+    public function companyList()
+    {
+        return $this->hasMany(Companies_users::class, 'user_id');
+    }
     
 }
