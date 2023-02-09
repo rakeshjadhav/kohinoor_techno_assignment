@@ -46,7 +46,7 @@ use Illuminate\Log\Logger;
             );
             $user->update($updatePayload);
      }
-    return $user;
+      return $user;
     }
 
     ### soft delete  employee

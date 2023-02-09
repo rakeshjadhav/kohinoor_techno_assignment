@@ -4,8 +4,11 @@ namespace App\Http\Controllers;
 
 use App\DTOs\CompanyDTO;
 use App\DTOs\CompanyUpdateDTO;
+use App\DTOs\CompanyUserUpdateDTO;
 use App\Http\Requests\AddCompanyRequest;
 use App\Http\Requests\UpdateCompanyRequest;
+use App\Http\Requests\UpdateCompanyUserRequest;
+use App\Models\Companies_users;
 use Illuminate\Http\Request;
 use App\Repositories\CompanyRespository;
 use App\Models\Company;
@@ -63,4 +66,23 @@ class CompanyController extends Controller
         $activeCompanyData = $this->getListOfCompanies();
         return view('company.list')->with('activeCompanyData', json_decode($activeCompanyData));
     }
+
+    public function getUserByCompanyID(string $companyId)
+    {
+        return $this->companyRespository->getUserByCompanyID($companyId); 
+        
+    }
+    public function searchUserByCompanyID(Request $request, string $id)
+    {
+        
+        $activeCompanyData = $this->getUserByCompanyID($id);
+        $returnHTML = view('company.tag_user')->with('activeCompanyData', $activeCompanyData)->render();
+        echo $returnHTML;
+    }
+
+     ### update company data using id
+     public function updateCompanyUser(UpdateCompanyUserRequest $updateCompanyUserRequest,string $id): ?array
+     {
+         return $this->companyRespository->updateCompanyUser($updateCompanyUserRequest, $id);        
+     }
 }

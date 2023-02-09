@@ -47,5 +47,10 @@ Route::prefix("company")->group(function () {
     Route::post('/update-company/{id}',[CompanyController::class,'updateCompanyIdWise']);
     ### soft delete company 
     Route::delete('/delete-company/{id}',[CompanyController::class,'deleteCompanyIdWise']);
+
+    Route::get('/searchUserByCompanyID/{id}',[CompanyController::class,'searchUserByCompanyID']);
+
+    Route::post('/update-companyUser/{id}',[CompanyController::class,'updateCompanyUser']);
+    
 });
 

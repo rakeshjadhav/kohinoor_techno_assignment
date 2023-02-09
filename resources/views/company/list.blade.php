@@ -24,18 +24,24 @@
                            <th>Name</th>
                            <th>Address</th>
                            <th>Add User</th>
+                           <th>#</th>
                            <th>Actions</th>
                         </tr>
                      </thead>
                      <tbody>
-                        @foreach($activeCompanyData as $company)
+                        @foreach($activeCompanyData as $key =>  $company)
                         <tr company_id = <?php echo $company->id;?> >
                            <td>{{$company->name}}</td>
                            <td>{{$company->address}}</td>
                            <td>
-                              <a href="#tagUserModal" data-toggle="modal" class="btn btn btn-rounded btn-success btn-outline m-r-5">
+                              <a company_id = <?php echo $company->id;?> href="#tagUserModal" data-toggle="modal" class="tag-user-company btn btn btn-rounded btn-success btn-outline m-r-5">
                               <i class="ti-check text-success m-r-5"></i>Add User
                               </a> 
+                           </td>
+                           <td>
+                              @foreach($company->company_user as $key1 =>  $user)
+                           </span><?php echo ($user->user_details->name);  ?></span> <br/>
+                           @endforeach
                            </td>
                            <td>
                               <a company_id = <?php echo $company->id;?> class="edit-company-btn btn btn-primary btn-icon-split" data-toggle="modal">Edit</a>
@@ -100,6 +106,33 @@
                <div class="modal-footer">
                   <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
                   <input type="submit" id="editCompanySubmit" emp-id="" class="btn btn-info" value="Update">
+               </div>
+            </form>
+         </div>
+      </div>
+   </div>
+
+
+   <div id="tagUserModal" class="modal fade bd-example-modal-xl">
+      <div class="modal-dialog modal-dialog modal-xl">
+         <div class="modal-content">
+            <form id="tagUserForm" companyuser-id="">
+               <div class="modal-header">
+                  <h4 class="modal-title">Add Users to Company</h4>
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+               </div>
+               <div class="modal-body">
+                  <div id="showError" class="font-medium text-red-600 alert alert-danger d-none"></div>
+                  
+                  <div class="search_box_result tagUsers">
+
+                  </div>
+                 
+                
+               </div>
+               <div class="modal-footer">
+                  <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                  <input type="submit" id="tagUserSubmit" emp-id="" class="btn btn-info" value="Update">
                </div>
             </form>
          </div>
